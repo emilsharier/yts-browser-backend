@@ -1,6 +1,9 @@
+// Initiating database connection
+require("./domain/repositories/db");
+
 const PORT = process.env.PORT || 3000;
 
-const { dbSuccessLog } = require("./common/messages");
+const { messageLog } = require("./common/messages");
 
 const morgan = require("morgan");
 const express = require("express");
@@ -15,5 +18,5 @@ app.use(express.json());
 require("./routes/index")(app);
 
 app.listen(PORT, () => {
-  dbSuccessLog(`Server up and running at ${PORT}`);
+  messageLog(`Server up and running at ${PORT}`);
 });
