@@ -1,0 +1,3 @@
+exports.SUCCESS_WITH_DATA = 201;
+exports.SUCCESS = 200;
+exports.INTERNAL_ERROR = 500;
