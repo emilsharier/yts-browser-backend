@@ -20,3 +20,12 @@ require("./routes/index")(app);
 app.listen(PORT, () => {
   messageLog(`Server up and running at ${PORT}`);
 });
+
+// Cron jobs
+const cron = require("node-cron");
+const { cacheAPI } = require("./cron/cron_job");
+
+cron.schedule("*/2 * * * *", () => {
+  cacheAPI();
+  // console.log("Caching API");
+});

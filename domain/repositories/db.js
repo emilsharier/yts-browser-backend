@@ -6,7 +6,6 @@ mongoose
   .connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
   })
   .catch((err) => {
     dbErrorLog(`Error occured while connecting : ${err}`);
