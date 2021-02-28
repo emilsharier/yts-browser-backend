@@ -9,8 +9,14 @@ const {
 
 const getMovies = asyncHandler(async (req, res, next) => {
   const result = await movieService.getMovie(req.body);
-  if (result) send(res, SUCCESS_WITH_DATA, result.data.data);
+  if (result) send(res, SUCCESS_WITH_DATA, result);
   else send(res, INTERNAL_ERROR, { message: "Internal server error" });
 });
 
-module.exports = { getMovies };
+const searchMovie = asyncHandler(async (req, res, next) => {
+  const result = await movieService.searchForMovie(req.body);
+  if (result) send(res, SUCCESS_WITH_DATA, result);
+  else send(res, INTERNAL_ERROR, { message: "Internal server error" });
+});
+
+module.exports = { getMovies, searchMovie };
