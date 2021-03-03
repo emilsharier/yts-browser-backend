@@ -8,7 +8,7 @@ exports.cacheAPI = async () => {
     Movie.deleteMany({}, deleteCallback);
     let i = 0;
     let movies = [];
-    for (i = 1; i <= 50; i++) {
+    for (i = 1; i <= 100; i++) {
       let result = await axios.get(base_url, {
         params: {
           page: i,

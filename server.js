@@ -26,6 +26,6 @@ const cron = require("node-cron");
 const { cacheAPI } = require("./cron/cron_job");
 
 cron.schedule("*/20 * * * *", () => {
-  // cacheAPI();
+  cacheAPI();
   // console.log("Caching API");
 });
