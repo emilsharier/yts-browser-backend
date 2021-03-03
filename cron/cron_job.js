@@ -38,6 +38,7 @@ exports.cacheAPI = async () => {
             imdb_code: element.imdb_code,
             title: element.title,
             year: element.year,
+            youtube_trailer: element.yt_trailer_code,
             rating: element.rating,
             runtime: element.runtime,
             genres: element.genres,

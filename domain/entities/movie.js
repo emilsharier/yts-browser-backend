@@ -40,6 +40,10 @@ const Movie = new mongoose.Schema({
   background_image: {
     type: String,
   },
+  youtube_trailer: {
+    type: String,
+    default: "",
+  },
   torrents: [
     {
       url: {
