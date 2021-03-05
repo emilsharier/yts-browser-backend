@@ -17,6 +17,7 @@ const getMovie = async (properties) => {
 const searchForMovie = async (properties) => {
   try {
     const { query_term } = properties;
+
     const result = await axios.get(base_url, {
       params: {
         query_term: query_term,
