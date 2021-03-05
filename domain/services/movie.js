@@ -22,7 +22,44 @@ const searchForMovie = async (properties) => {
         query_term: query_term,
       },
     });
-    return result.data.data;
+
+    let results = result.data.data;
+
+    let movies = [];
+
+    results.movies.forEach((element) => {
+      let torrents = [];
+      element.torrents.forEach((torrent) => {
+        torrents.push({
+          url: torrent.url,
+          hash: torrent.hash,
+          quality: torrent.quality,
+          type: torrent.type,
+          seeds: torrent.seeds,
+          peers: torrent.peers,
+          size: torrent.size,
+          date_uploaded: torrent.date_uploaded,
+        });
+      });
+      movies.push({
+        movie_id: element.id,
+        url: element.url,
+        imdb_code: element.imdb_code,
+        title: element.title,
+        year: element.year,
+        youtube_trailer: element.yt_trailer_code,
+        rating: element.rating,
+        runtime: element.runtime,
+        genres: element.genres,
+        description: element.description_full,
+        language: element.language,
+        cover_image: element.medium_cover_image,
+        background_image: element.background_image,
+        torrents: torrents,
+      });
+    });
+
+    return movies;
   } catch (ex) {
     errorLog(ex);
   }
