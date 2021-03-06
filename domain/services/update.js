@@ -4,15 +4,13 @@ exports.getUpdates = async (properties) => {
   try {
     const payload = {
       important_info: [
-        "Important info 1",
-        "Important info 2",
-        "Important info 3",
+        "If the images do not load, it may be because of the restrictions set by your internet provider",
+        "Filtering has been temporarily disabled, the devloper is working on enhancing the features",
       ],
-      whats_new: ["What's new 1", "What's new 2", "What's new 3"],
+      whats_new: [],
       coming_updates: [
-        "Coming updates 1",
-        "Coming updates 2",
-        "Coming updates 3",
+        "More filters, to filter movies according to your taste",
+        "Suggestion page, personalized suggestions for the user",
       ],
     };
     return payload;
