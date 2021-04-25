@@ -9,6 +9,14 @@ const morgan = require("morgan");
 const express = require("express");
 const app = express();
 
+const cors = require("cors");
+
+app.use(
+  cors({
+    allowedHeaders: "*",
+  })
+);
+
 if (process.env.NODE_ENV === "dev") app.use(morgan("dev"));
 else app.use(morgan("common"));
 
@@ -19,12 +27,4 @@ require("./routes/index")(app);
 
 app.listen(PORT, () => {
   messageLog(`Server up and running at ${PORT}`);
-});
-
-// Cron jobs
-const cron = require("node-cron");
-const { cacheAPI } = require("./cron/cron_job");
-
-cron.schedule("*/20 * * * *", () => {
-  cacheAPI();
 });
