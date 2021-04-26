@@ -8,6 +8,10 @@ const Movie = new mongoose.Schema({
   url: {
     type: String,
   },
+  summary: {
+    type: String,
+    default: "",
+  },
   imdb_code: {
     type: String,
   },

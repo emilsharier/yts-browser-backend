@@ -15,7 +15,7 @@ exports.cacheAPI = async () => {
         },
       });
       let temp = result.data.data.movies;
-
+      console.log(temp);
       temp.forEach((element) => {
         let torrents = [];
         element.torrents.forEach((torrent) => {
@@ -35,6 +35,7 @@ exports.cacheAPI = async () => {
           new Movie({
             movie_id: element.id,
             url: element.url,
+            summary: element.summary,
             imdb_code: element.imdb_code,
             title: element.title,
             year: element.year,

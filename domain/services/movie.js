@@ -45,6 +45,7 @@ const searchForMovie = async (properties) => {
       movies.push({
         movie_id: element.id,
         url: element.url,
+        summary: element.summary,
         imdb_code: element.imdb_code,
         title: element.title,
         year: element.year,
